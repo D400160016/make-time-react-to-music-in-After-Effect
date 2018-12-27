@@ -1,0 +1,28 @@
+#make-timer-react-to-music-in-After-Effect
+
+rate = -1;
+clockStart = 0;
+ 
+function padZero(n)
+{
+  if (n < 10) return "0" + n else return "" + n
+}
+ 
+clockTime = clockStart + rate*(time - inPoint);
+ 
+if (clockTime < 0)
+{
+  sign = "-";
+  clockTime = -clockTime;
+}
+else
+{
+  sign = "";
+}
+ 
+t = Math.floor(clockTime);
+
+min = Math.floor((t%3600)/60);
+sec = Math.floor(t%60);
+ms = clockTime.toFixed(0).substr(0);
+padZero(min) + ":" + padZero(sec)
